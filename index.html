@@ -1,20 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>content</title>
-
-</head>
+<html>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
 <body>
+aaaa
+<!--<div w3-include-html="h1.html"></div> -->
+<a href="src/about.html">sss</a>
+<div w3-include-html="src/about.html"></div>
+<div w3-include-html="src/about.html"></div> 
+<script>includeHTML();</script>
+<script>
+includeHTML();
+</script>
 
-    <h2>dont give up! qqqq</h2>
-    <div w3-include-html="src/header.html"></div> 
-    <div w3-include-html="src/list.html"></div> 
-    <div w3-include-html="src/fotter.html"></div> 
-    
 </body>
 </html>
