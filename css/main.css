@@ -9,7 +9,7 @@ html, body {
 }
 main {
   min-height: 100%;
-  margin-bottom: -42px;
+  margin-bottom: -1%;
 }
 main:after {
   content: "";
@@ -17,7 +17,6 @@ main:after {
   height: 0px;
 }
 footer {
-  height: px;
   background: #eee;
 }
 .full-height {

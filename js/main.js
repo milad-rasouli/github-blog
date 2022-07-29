@@ -56,26 +56,26 @@ function sideline(enable) {
         console.log("enable is 1");
         
       }
-        // console.log("enable is 0");
+         console.log("enable is 0");
         
-        // codeLines = pres[p].querySelectorAll('p.code-line');
-        // for (var cl = codeLines.length, c = 0; c < cl; c++) {
-        //   codeLines[c].style.width = pres[p].scrollWidth + 'px';
-        // }
+        codeLines = pres[p].querySelectorAll('p.code-line');
+        for (var cl = codeLines.length, c = 0; c < cl; c++) {
+          codeLines[c].style.width = pres[p].scrollWidth + 'px';
+        }
     }
   };
   
 }
-// var timer;
+var timer;
 //listen for window resize event
-// window.addEventListener('resize', function(event){
-  // this.clearTimeout(timer);
-  // timer = setTimeout(function() { sideline(0); }, 500);
+window.addEventListener('resize', function(event){
+  this.clearTimeout(timer);
+  timer = setTimeout(function() { sideline(0); }, 500);
   
   // var pr = document.getElementsByTagName('pre');
   // var elem =document.getElementsByClassName("code-line");
   // elem.style.width = pr[0].scrollWidth+"px";
-// });
+});
 function content() {
   sideline(1);  
 }
