@@ -3,7 +3,6 @@
   <head>
     <title>Home</title>
     <script src="js/main.js"></script>
-    <!--<div include="src/links.html"></div>-->
     <link rel="stylesheet" href="css/main.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   </head>
   <body>
-
-    <!--<div include="src/home.html"></div>-->
-    
   <main>
-    <div class="topnav" id="myTopnav">
-      <a href="#home" class="active"><i class="fa fa-fw fa-home"></i>&nbsp;Home</a>
-    <a href="src/contents.html"><i class="fa-solid fa-file-lines"></i>&nbsp;Contents</a>
-    <a href="src/about.html"><i class="fa fa-fw fa-envelope"></i> &nbsp;About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-    </div>
-  
+    <!--import navigation to current file-->
+    <div include="src/navigation.html"></div>
+    <!--main content-->
       <div class = "full-height">
         <div class="content">
           <h2>Responsive Topnav Example</h2>
@@ -33,23 +23,13 @@
           <p>Resize the browser window to see how it works.</p>
           <p>Resize the browser window to see how it works.</p>
           <p>Resize the browser window to see how it works.</p>
-
         </div>
       </div>
   </main>
-    <footer class="footer_t">
-      <p>I <span>&hearts;</span> Programming</p>
-    </footer>
+  <!--import footer to current file-->
+  <div include="src/footer.html"></div>
     <script>
       includeHTML();
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
     </script>
   </body>
 </html>
