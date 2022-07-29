@@ -127,5 +127,34 @@ footer span
   }
 }
 
-
+/* to have liner code block*/
+.blockcode {
+  overflow-x: auto;
+  background-color: white;
+  overflow: auto;
+}
+.blockcode p{
+  margin: 0;
+}
+code {
+  display: block;
+}
+p.code-line::before {
+  content: counter(code-line);
+  display: inline-block;
+  color: grey;
+  text-align: right;
+  width: 2em;
+  padding-right: 0.5em;
+  border-right: 1px solid lightcoral;
+  margin-right: 1em;
+}
+p.code-line {
+  counter-increment: code-line;
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid lightblue;
+  border-bottom: 1px solid lightblue;
+  margin-top: -1px;
+}
 
