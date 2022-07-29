@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html>
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
-</script>
-<body>
-aaaa
-<!--<div w3-include-html="h1.html"></div> -->
-<a href="src/about.html">sss</a>
-<div w3-include-html="src/about.html"></div>
-<div w3-include-html="src/about.html"></div> 
-<script>includeHTML();</script>
-<script>
-includeHTML();
-</script>
+  <head>
+    <title>Home</title>
+    <script src="js/main.js"></script>
+    <!--<div include="src/links.html"></div>-->
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  </head>
+  <body>
 
-</body>
+    <!--<div include="src/home.html"></div>-->
+    
+  <main>
+    <div class="topnav" id="myTopnav">
+      <a href="#home" class="active"><i class="fa fa-fw fa-home"></i>&nbsp;Home</a>
+    <a href="src/contents.html"><i class="fa-solid fa-file-lines"></i>&nbsp;Contents</a>
+    <a href="src/about.html"><i class="fa fa-fw fa-envelope"></i> &nbsp;About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    </div>
+  
+      <div class = "full-height">
+        <div class="content">
+          <h2>Responsive Topnav Example</h2>
+          <p>Resize the browser window to see how it works.</p>
+          <p>Resize the browser window to see how it works.</p>
+          <hr>
+          <p>Resize the browser window to see how it works.</p>
+          <p>Resize the browser window to see how it works.</p>
+          <p>Resize the browser window to see how it works.</p>
+
+        </div>
+      </div>
+  </main>
+    <footer class="footer_t">
+      <p>I <span>&hearts;</span> Programming</p>
+    </footer>
+    <script>
+      includeHTML();
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </body>
 </html>
