@@ -9,12 +9,12 @@ html, body {
 }
 main {
   min-height: 100%;
-  margin-bottom: -2.6em;
+  margin-bottom: -2.6em; /*to change size*/
 }
 main:after {
   content: "";
   display: block;
-  height: 2.8em;
+  height: 2.8em; /*to change size*/
 }
 footer {
   background: #eee;
