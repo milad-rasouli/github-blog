@@ -17,13 +17,22 @@
     <!--main content-->
       <div class = "full-height">
         <div class="content">
-          <h2>Responsive Topnav Example</h2>
-          <p>Resize the browser window to see how it works.</p>
-          <p>Resize the browser window to see how it works.</p>
-          <hr>
-          <p>Resize the browser window to see how it works.</p>
-          <p>Resize the browser window to see how it works.</p>
-          <p>Resize the browser window to see how it works.</p>
+          <h2 class="border">Contents</h2>
+          <!--<hr>-->
+          
+          <div class="numberlist">
+          <ol>
+            <li> <a href="#"> First item</a>
+              <ol>
+                <li><a href="#">First sub-item</a></li>
+                <li><a href="#">Second sub-item</a></li>
+                <li><a href="#">Third sub-item</a></li>
+              </ol>
+            </li>
+            <li><a href="#">Second item</a></li>
+            <li><a href="#">Third item</a></li>
+          </ol>
+          </div>
         </div>
       </div>
   </main>
@@ -31,6 +40,7 @@
   <div include="src/footer.html"></div>
     <script>
       includeHTML();
+      content();
     </script>
   </body>
 </html>

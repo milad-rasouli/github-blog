@@ -67,7 +67,74 @@ footer span
   color: red;
   font-size: 24px;
 }
+a:hover {
+  /*text-decoration: underline;*/
+  color: #F66B0E;
+}
+a {
+  text-decoration: none;
+}
+/*list*/
+/*.numberlist{
+	width:450px;
+}*/
+.numberlist ol{
+  counter-reset: li;
+  list-style: none;
+  *list-style: decimal;
+  /*font: 15px 'trebuchet MS', 'lucida sans';*/
+  padding: 0;
+  /*margin-bottom: 4em;*/
+}
+.numberlist ol ol{
+  margin: 0 0 0 2em;
+}
 
+.numberlist a{
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em 2em;
+  *padding: .4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-left: 30px;
+  /*background: #FFF;*/
+  color: #444;
+  text-decoration: none;
+  -moz-border-radius: .3em;
+  -webkit-border-radius: .3em;
+  border-radius: .3em;
+}
+
+.numberlist a:hover{
+  /*background: #cbe7f8;
+  text-decoration:underline;*/
+  color: #F66B0E;
+}
+.numberlist a:before{
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;	
+  left: -.5em;
+  top: 61%;
+  margin-top: -1.3em;
+  background: #112B3C;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  /*border: .3em solid #fff;*/
+  text-align: center;
+  font-weight: bold;
+  -moz-border-radius: 2em;
+  -webkit-border-radius: 2em;
+  border-radius: 2em;
+  color:#FFF;
+}
+
+/* End css list with numeber circle background -------------- */
+
+
+/*nav bar*/
 .topnav {
   overflow: hidden;
   background-color: #112B3C;
@@ -132,6 +199,7 @@ footer span
   overflow-x: auto;
   background-color: white;
   overflow: auto;
+  max-height: 700px;
 }
 .blockcode p{
   margin: 0;
@@ -152,9 +220,17 @@ p.code-line::before {
 p.code-line {
   counter-increment: code-line;
   display: inline-block;
-  width: 100%;
+  min-width: 100%;
   border-top: 1px solid lightblue;
   border-bottom: 1px solid lightblue;
   margin-top: -1px;
 }
 
+/* come classes for text style*/
+
+.red_text{
+  color :red;
+}
+.border{
+  border-bottom: 1px solid #112B3C;
+}
