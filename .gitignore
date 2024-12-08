@@ -5,8 +5,8 @@
 /resources/
 
 # Hugo configuration files
-config.toml
-hugo.toml
+# config.toml
+# hugo.toml
 
 # Temporary files
 *.log
