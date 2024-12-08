@@ -1,0 +1,30 @@
+# Hugo build directory
+/public/
+
+# Hugo cache directory
+/resources/
+
+# Hugo configuration files
+config.toml
+hugo.toml
+
+# Temporary files
+*.log
+*.tmp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if using npm)
+node_modules/
+
+# Other files to ignore
+*.swp
+*.swo
